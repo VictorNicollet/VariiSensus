@@ -31,4 +31,5 @@ let all =
     "30", "Patriarche" ;
     "31", "Le&nbsp;Poison" ;
     "32", "Nature&nbsp;Divine" ;
+    "33", "Lucrèce" ;
   ]
