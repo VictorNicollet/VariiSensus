@@ -1,0 +1,34 @@
+let all = 
+  [ "1",  "Athanor" ;
+    "2",  "Mynari" ;
+    "3",  "Erenheim" ;
+    "4",  "Sans-Visage" ;
+    "5",  "Didalane" ;
+    "6",  "Cauchemars" ;
+    "7",  "Aphorismes" ;
+    "8",  "Le Soiffard" ;
+    "9",  "Apocalypse" ;
+    "10", "Théologie" ;
+    "11", "Serrig" ;
+    "12", "Arkadir" ; 
+    "13", "Haute Trahison" ;
+    "14", "Ordo Eborius" ;
+    "15", "Suidaster" ;
+    "16", "Mémoire" ;
+    "17", "Hans Banach" ;
+    "18", "Simmera" ;
+    "19", "Geerart" ;
+    "20", "Guirevennec" ;
+    "21", "Invasion" ;
+    "22", "Archange" ;
+    "23", "Josephus" ;
+    "24", "Parchaki" ;
+    "25", "Récompense" ;
+    "26", "Généalogie" ;
+    "27", "Prédécesseur" ;
+    "28", "Informateur" ;
+    "29", "Croisière" ;
+    "30", "Patriarche" ;
+    "31", "Le&nbsp;Poison" ;
+    "32", "Nature&nbsp;Divine" ;
+  ]

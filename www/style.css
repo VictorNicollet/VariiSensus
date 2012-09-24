@@ -1,0 +1,179 @@
+body {
+  background-color: #FFF;
+  color: #333;
+  font-size: 17px;
+  margin: 0;
+  font-family: "Open Sans", "Verdana", sans;
+}
+
+h1, h2 { 
+  font-family: "Francois One", serif;
+}
+
+#head { 
+  background-color: #FFF;
+  overflow: hidden;
+  margin-bottom: 45px;
+}
+
+#head > * { 
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+}
+
+#head h1 { 
+  margin: 0 auto;
+  font-size: 58px;
+  text-shadow: 0 -1px 0 #555;
+}
+
+#head h1 a { 
+  color: #888;
+  text-decoration: none;
+}
+
+#author { 
+  height: 0px;
+}
+
+#author p { 
+  text-align: right;
+  margin: 0;
+  font-weight: bold;
+  padding-top: 46px;
+}
+
+#author a { 
+  color: #888;
+  text-decoration: none;
+}
+
+#head > p {
+  color: #AAA; 
+  font-size: 20px;
+  margin: 0 auto;
+  width: 870px;
+}
+
+#head > p a { 
+  color: #888;
+  text-decoration: none;
+}
+
+#page {
+  width: 900px;
+  overflow: hidden;
+  margin: 45px auto;
+  min-height: 300px;
+}
+
+#text { 
+  float: right;
+  width: 580px;
+}
+
+#text p { 
+  margin: 18px 0 0;
+  font-size: 17px;
+  text-align: justify;
+  line-height: 1.65em;
+}
+
+#side { 
+  width: 280px;
+  position: fixed;
+  text-align: right;
+}
+
+#side h2 { 
+  margin: 18px 0 0;
+  font-size: 42px;
+  color: #AAA;
+  height: 120px;
+  line-height: 1em;
+}
+
+#side h2 span { 
+  color: #CCC;
+}
+
+#prev, #next 
+{ 
+  margin: 5px 0;
+  background-color: #EEE;
+  display: block;
+  color: #555;
+  padding: 5px 10px; 
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden; 
+  text-decoration: none;
+  box-shadow: inset 0 0 20px #CCC;
+}
+
+#prev { 
+  text-align: left;
+  border-left: 3px solid #888;
+}
+
+#next { 
+  text-align: right; 
+  border-right: 3px solid #888;
+}
+
+#text p.d { 
+  margin-top: 0;
+}
+
+#foot { 
+  border-top: 1px solid #CCC;
+  color: #888;
+  margin: 130px auto 0;
+  padding: 12px;
+  text-align: center;
+  width: 900px;
+}
+
+#archive { 
+  list-style-type: none;
+  float: right;
+  margin: 20px 280px;
+  padding: 0;
+  width: 300px;
+}
+
+#archive li { 
+  margin-bottom: 5px;
+}
+
+#archive li a { 
+  background-color: #EEE;
+  display: block;
+  color: #555;
+  padding: 5px 10px; 
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden; 
+  text-decoration: none;
+  box-shadow: inset 0 0 20px #CCC;
+}
+
+#archive a span {
+  display: inline-block;
+  width: 25px;
+  text-align: right; 
+}
+
+#archives { 
+  color: #888;
+  display: block;
+  margin-top: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#foot a { 
+  color: #8AD;
+  text-decoration: none;
+}
