@@ -33,4 +33,5 @@ let all =
     "32", "Le&nbsp;Poison" ;
     "33", "Nature&nbsp;Divine" ;
     "34", "Lucrèce" ;
+    "35", "Sébastien" ; 
   ]
