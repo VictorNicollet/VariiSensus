@@ -35,4 +35,5 @@ let all =
     "34", "Nature&nbsp;Divine" ;
     "35", "Lucrèce" ;
     "36", "Sébastien" ; 
+    "37", "Jeanne" ;
   ]
