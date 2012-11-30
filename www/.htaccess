@@ -3,7 +3,7 @@ RewriteBase /book/
 RewriteCond %{REQUEST_FILENAME}.htm -f
 RewriteRule ^(.*) $1.htm [L]
 
-RewriteRule ^$ http://nicollet.net/book/37 [R=303,L]
+RewriteRule ^$ http://nicollet.net/book/38 [R=303,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^.* 404.htm [L]
