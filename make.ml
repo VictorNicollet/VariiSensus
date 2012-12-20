@@ -112,6 +112,37 @@ let generate_archives =
   output_string chan html ;
   close_out chan 
 
+let generate_rss = 
+
+  let date time = 
+    let tm = Unix.gmtime time in 
+    Unix.(Printf.sprintf "%s, %02d %s %d %02d:%02d:%02d +0000"
+	    [| "Sun" ; "Mon" ; "Tue" ; "Wed" ; "Thu" ; "Fri" ; "Sat" |].(tm.tm_wday)
+	    tm.tm_mday 
+	    [| "Jan" ; "Feb" ; "Mar" ; "Apr" ; "May" ; "Jun" ; "Jul" ; "Aug" ; "Sep" ; "Oct" ; "Nov" ; "Dec" |].(tm.tm_mon)
+	    (1900 + tm.tm_year)
+	    tm.tm_hour tm.tm_min tm.tm_sec)
+  in
+
+  let items = String.concat "</item><item>" (List.map (fun (path,title) ->
+    "<title>" ^ path ^ ".&#160;" ^ title ^ "</title><link>http://nicollet.net/book/" ^ path ^ "</link>"
+  ) (List.rev All.all)) in
+
+  let xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>
+<rss version=\"2.0\">
+<channel>
+  <title>Varii Sensus</title>
+  <description>Varii Sensus est un roman de fiction, dont un nouveau chapitre est mis en ligne chaque lundi.</description>
+  <link>http://nicollet.net/book</link>
+  <pubDate>" ^ date (Unix.gettimeofday ()) ^ "</pubDate>
+  <item>" ^ items ^ "</item>
+</channel>" in
+  let path = "www/rss.xml" in
+  print_endline path ;
+  let chan = open_out path in
+  output_string chan xml ;
+  close_out chan 
+
 let generate_htaccess = 
   let b = Buffer.create 1024 in
   Buffer.add_string b "RewriteEngine On\nRewriteBase /book/\n" ;
