@@ -32,12 +32,12 @@ let all =
     "31", "Croisière" ;
     "32", "Patriarche" ;
     "33", "Poison" ;
-    "34", "Nature&nbsp;Divine" ;
+    "34", "Nature&#160;Divine" ;
     "35", "Lucrèce" ;
     "36", "Sébastien" ; 
     "37", "Jeanne" ;
     "38", "Adinn" ;
     "39", "Abyssales" ;
     "40", "Empire" ;
-    "41", "La&nbsp;Morgue"
+    "41", "La&#160;Morgue"
   ]

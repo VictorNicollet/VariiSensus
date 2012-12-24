@@ -61,6 +61,7 @@ let wrap title page path prev next =
       " ^ prev ^ " 
       " ^ next ^ " 
       " ^ arch ^ "
+      <a id=\"RSS\" href=\"http://nicollet.net/book/rss.xml\">RSS</a>
     </div>
   </div>
   <div id=foot>Varii Sensus &copy; 2012 Victor Nicollet<br/><small>Avec une photo par <a href=\"http://www.flickr.com/photos/quelgar/83763441/in/photostream/\">Lachlan O'Dea</a></div>

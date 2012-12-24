@@ -135,6 +135,14 @@ h1, h2 {
   width: 900px;
 }
 
+#RSS { 
+  color: #888;
+  display: block;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+}
+
 #archive { 
   list-style-type: none;
   float: right;
