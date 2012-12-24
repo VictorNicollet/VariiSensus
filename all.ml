@@ -39,4 +39,5 @@ let all =
     "38", "Adinn" ;
     "39", "Abyssales" ;
     "40", "Empire" ;
+    "41", "La&nbsp;Morgue"
   ]
