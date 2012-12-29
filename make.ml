@@ -25,13 +25,13 @@ let wrap title page path prev next =
   in
 
   let next = match next with 
-    | None -> "<div style=\"height:35px;\"></div>"
-    | Some (path,title) -> "<a id=next href=" ^ path ^ ">" ^ path ^ ". " ^ title ^ "</a>"
+    | None -> ""
+    | Some (path,title) -> "<a class=next href=" ^ path ^ ">" ^ path ^ ". " ^ title ^ "&emsp;▶</a>"
   in 
 
   let prev = match prev with 
-    | None -> "<div style=\"height:35px;\"></div>"
-    | Some (path,title) -> "<a id=prev href=" ^ path ^ ">" ^ path ^ ". " ^ title ^ "</a>"
+    | None -> ""
+    | Some (path,title) -> "<a class=prev href=" ^ path ^ ">◀&emsp;" ^ path ^ ". " ^ title ^ "</a>"
   in
 
   let num = match path with 
@@ -50,21 +50,30 @@ let wrap title page path prev next =
 </head>
 <body>
   <div id=head>
-    <div id=author><p><a href=\"http://nicollet.net\">Victor Nicollet</a></p></div>
     <h1><a href=\"http://nicollet.net/book\">Varii Sensus</a></h1>
-    <p>Varii Sensus est un roman de fiction, dont un nouveau chapitre est mis en ligne chaque lundi.<br/> Il est recommandé de <a href=\"1\">commencer au premier chapitre</a>.
+    <div id=author><p>écrit par <a href=\"http://nicollet.net\">Victor Nicollet</a></p></div>
+    <p>Varii Sensus est un roman de fiction, dont un nouveau chapitre est mis en ligne chaque semaine.</p>
   </div>
   <div id=page>
-    " ^ page ^ "
-    <div id=side>
+    <div id=top>
+      <div class=navig>
+        " ^ prev ^ " 
+        " ^ next ^ "
+        " ^ arch ^ " 
+      </div>
       <h2>" ^ num ^ title ^ "</h2>
-      " ^ prev ^ " 
-      " ^ next ^ " 
-      " ^ arch ^ "
-      <a id=\"RSS\" href=\"http://nicollet.net/book/rss.xml\">RSS</a>
     </div>
+    " ^ page ^ "
+    <div id=bot>
+      <div class=navig>
+        " ^ prev ^ " 
+        " ^ next ^ "
+        " ^ arch ^ " 
+      </div>
+      <a id=\"RSS\" href=\"http://nicollet.net/book/rss.xml\">RSS</a>
+    </div>    
   </div>
-  <div id=foot>Varii Sensus &copy; 2012 Victor Nicollet<br/><small>Avec une photo par <a href=\"http://www.flickr.com/photos/quelgar/83763441/in/photostream/\">Lachlan O'Dea</a></div>
+  <div id=foot>Varii Sensus &copy; 2013 Victor Nicollet<br/><small>Avec des photos par <a href=\"http://www.flickr.com/photos/quelgar/83763441/in/photostream/\">Lachlan O'Dea</a> et <a href=\"http://wallbase.cc/wallpaper/409811\">Wallbase</a>.</div>
   <script type=\"text/javascript\">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-34610151-1']);
