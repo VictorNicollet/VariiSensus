@@ -139,6 +139,7 @@ h1, h2 {
   padding: 18px 40px 40px;
   border: 1px solid #000;
   box-shadow: 1px 1px 8px #111;
+  margin-bottom: 20px;
 }
 
 #text p { 
@@ -146,6 +147,10 @@ h1, h2 {
   font-size: 17px;
   text-align: justify;
   line-height: 1.65em;
+}
+
+#text p.d {
+  margin: 0;
 }
 
 #foot { 

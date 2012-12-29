@@ -16,7 +16,7 @@ let index path last =
   <meta property=\"fb:admins\" content=\"517629600\"/>
   <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>  
-  <link rel=stylesheet href=\"style.css\"/>
+  <link rel=stylesheet href=\"http://nicollet.net/book/style.css\"/>
   <title>Varii Sensus</title>
 </head>
 <body>
