@@ -3,6 +3,46 @@ let body path =
   let lexbuf = Lexing.from_channel chan in 
   Lex.clean lexbuf 
 
+let index path last = 
+ "<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv=\"Content-Type\" value=\"text/html; charset=UTF-8\"/>
+  <meta property=\"og:title\" content=\"Varii Sensus\"/>
+  <meta property=\"og:type\" content=\"book\"/>
+  <meta property=\"og:url\" content=\"http://nicollet.net/book/\"/>
+  <meta property=\"og:image\" content=\"http://nicollet.net/book/cliff-thumb.png\"/>
+  <meta property=\"og:site_name\" content=\"Varii Sensus\"/>
+  <meta property=\"fb:admins\" content=\"517629600\"/>
+  <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>  
+  <link rel=stylesheet href=\"style.css\"/>
+  <title>Varii Sensus</title>
+</head>
+<body>
+  
+    <center style=\"margin-top: 150px\">
+      <h1 style=\"font-size:2.5em\">Varii Sensus</h1>
+      <div class=\"navig\" style=\"float:none;text-align:center\">
+	<a href=\"http://nicollet.net/book/"^path^"\">"^path^". "^last^"</a>
+      </div>
+    </center>
+  
+  <div id=foot><small>Varii Sensus &copy; 2013 Victor Nicollet.</small></div>
+  <script type=\"text/javascript\">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34610151-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = 'http://www.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>"
+
+
 let wrap title page path prev next = 
 
   let arch = 
@@ -153,25 +193,16 @@ let generate_rss =
   output_string chan xml ;
   close_out chan 
 
-let generate_htaccess = 
-  let b = Buffer.create 1024 in
-  Buffer.add_string b "RewriteEngine On\nRewriteBase /book/\n" ;
-  Buffer.add_string b "RewriteCond %{REQUEST_FILENAME}.htm -f\n" ;
-  Buffer.add_string b "RewriteRule ^(.*) $1.htm [L]\n\n" ;
+let generate_index = 
   let rec aux = function
-    | [path,_] -> 
-      Buffer.add_string b "RewriteRule ^$ http://nicollet.net/book/" ;
-      Buffer.add_string b path ;
-      Buffer.add_string b " [R=303,L]\n\n" 
-    | _ :: t -> aux t 
-    | [] -> ()
+    | [path,title] -> index path title
+    | _ :: t -> aux t
+    | [] -> ""
   in
-  aux All.all ;
-  Buffer.add_string b "RewriteCond %{REQUEST_FILENAME} !-f\n" ;
-  Buffer.add_string b "RewriteRule ^.* 404.htm [L]\n" ;
-  print_endline "www/.htaccess" ;
-  let chan = open_out "www/.htaccess" in
-  output_string chan (Buffer.contents b) ;
+  let html = aux All.all in
+  print_endline "www/index.htm" ;
+  let chan = open_out "www/index.htm" in
+  output_string chan html ;
   close_out chan 
 	
 let page404 = 
