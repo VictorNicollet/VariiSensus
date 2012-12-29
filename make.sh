@@ -1,1 +1,1 @@
-ocamlbuild make.byte && ./make.byte
+ocamlbuild -lib unix make.byte && ./make.byte

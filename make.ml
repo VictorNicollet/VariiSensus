@@ -42,7 +42,7 @@ let wrap title page path prev next =
   "<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv=\"Content-Type\" value=\"text/html;charset=UTF-8\"/>" ^ opengraph ^ "
+  <meta http-equiv=\"Content-Type\" value=\"text/html; charset=UTF-8\"/>" ^ opengraph ^ "
   <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>  
   <link rel=stylesheet href=\"style.css\"/>
