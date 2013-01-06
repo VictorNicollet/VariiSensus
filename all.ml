@@ -42,4 +42,5 @@ let all =
     "41", "La&#160;Morgue" ;
     "42", "Immortels" ;
     "43", "Mygaën" ;
+    "44", "Histoire" ;
   ]
