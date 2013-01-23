@@ -46,4 +46,5 @@ let all =
     "45", "Gwenadir" ;
     "46", "Altarane" ; 
     "47", "Nagovie" ; 
+    "48", "Varii&#160;Sensus" ;
   ]
