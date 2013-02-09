@@ -1,3 +1,42 @@
+let generate_words () = 
+
+  let count_for name counter =
+
+    let count = Hashtbl.create 1000 in
+
+    counter count ; 
+
+    let list = List.sort (fun (_,a) (_,b) -> compare b a)
+      (Hashtbl.fold (fun k v acc -> (k,v) :: acc) count []) in
+
+    let total = List.fold_left (fun acc (_,a) -> acc + a) 0 list in
+
+    Printf.printf "==== %s - %d words - spread factor %f ====\n" name total 
+      (float_of_int (List.length list) /. float_of_int total) ;
+
+    List.iter (fun (word, count) ->
+      Printf.printf "%3d (%2d%%) %s\n" count (count * 100 / total) word) list ;
+
+    print_newline () 
+
+  in
+
+  count_for "All" (fun count -> 
+    List.iter (fun (path,_) -> 
+      let chan = open_in ("chapters/" ^ path) in 
+      let lexbuf = Lexing.from_channel chan in 
+      Lex.words count lexbuf 
+    ) All.all 
+  ) ;
+
+  List.iter (fun (path,name) ->
+    count_for name (fun count -> 
+      let chan = open_in ("chapters/" ^ path) in 
+      let lexbuf = Lexing.from_channel chan in 
+      Lex.words count lexbuf 
+    )
+  ) All.all 
+
 let body path = 
   let chan = open_in path in 
   let lexbuf = Lexing.from_channel chan in 
@@ -144,14 +183,14 @@ let generate prev (path,title) next =
   output_string chan html ;
   close_out chan 
 
-let generate_all = 
+let generate_all () = 
   let rec aux prev = function 
     | a :: (b :: _ as t) -> generate prev a (Some b) ; aux (Some a) t
     | [x] -> generate prev x None ;
     | [] -> assert false
   in aux None All.all
 
-let generate_archives = 
+let generate_archives () = 
   let list = String.concat "</li><li>" (List.map (fun (path,title) -> 
     "<a href=" ^ path ^ "><span>" ^ path ^ ". </span> " ^ title ^ "</a>"
   ) All.all) in
@@ -162,7 +201,7 @@ let generate_archives =
   output_string chan html ;
   close_out chan 
 
-let generate_rss = 
+let generate_rss () = 
 
   let date time = 
     let tm = Unix.gmtime time in 
@@ -193,7 +232,7 @@ let generate_rss =
   output_string chan xml ;
   close_out chan 
 
-let generate_index = 
+let generate_index () = 
   let rec aux = function
     | [path,title] -> index path title
     | _ :: t -> aux t
@@ -205,5 +244,16 @@ let generate_index =
   output_string chan html ;
   close_out chan 
 	
-let page404 = 
+let page404 () = 
   generate None ("404","Page Non Trouvée") None 
+
+let () = 
+  if Array.length Sys.argv = 1 then begin 
+    generate_all () ;
+    generate_archives () ;
+    generate_rss () ;
+    generate_index () ;
+    page404 () ; 
+  end else if Sys.argv.(1) = "--words" then begin
+    generate_words () 
+  end 

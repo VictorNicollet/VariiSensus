@@ -1,75 +1,86 @@
 {}
 
 let white = [ ' ' '\t' '\r' ]
-let consonant = [ 'b' 'c' 'd' 'f' 'g' 'h' 'j' 'k' 'l' 'm' 'n' 'p' 'q' 'r' 's' 't' 'v' 'w' 'x' 'z' ]
+let letter = ( ['a' - 'z' 'A' - 'Z'] 
+		 | "é" | "è" | "È" | "ê" | "Ê" | "ë" | "Ë" 
+		 | "à" | "À" | "â" | "Â" | "ä" | "Ä" 
+		 | "ô" | "Ô" | "ö" | "Ö" | "œ" | "Œ" 
+		 | "î" | "Î" | "ï" | "Ï" 
+		 | "ç" | "Ç" 
+		 | "-" | "'" ) 
 
-rule t d p b = parse
-  | ([^ ' ' '\n' '\r' '\t' ] as c1) "é" (consonant as c2)  
-      { if not p then Buffer.add_string b "<p>" ;
-	Buffer.add_char b c1 ;
-	Buffer.add_string b "é&shy;" ; 
-	Buffer.add_char b c2 ;
-	t d true b lexbuf } 
+let punctuation = [ '?' '!' ':' ] 
 
-  | "nv"
-      { if not p then Buffer.add_string b "<p>" ;
-	Buffer.add_string b "n&shy;v" ;
-	t d true b lexbuf }
-
-  | ([ ^ ' ' '\n' '\r' '\t'] as c) "sp" 
-      { if not p then Buffer.add_string b "<p>" ;
-	Buffer.add_char b c ;
-	Buffer.add_string b "s&shy;p" ; 
-	t d true b lexbuf }   
+rule continue inDialog inParagraph inv = parse
 
   | white * '\n' ( white | '\n' ) * '\n' 
-      { if p then Buffer.add_string b "</p>" ;
-	t false false b lexbuf } 
+      { if inDialog then inv # end_dialog else
+	  if inParagraph then inv # end_paragraph ;
+	continue false false inv lexbuf } 
 
-  | white * ( [ '?' '!' ':' ] as c ) 
-      { if not p then Buffer.add_string b "<p>" ;
-	Buffer.add_string b "&nbsp;" ;
-	Buffer.add_char b c ;
-	t d true b lexbuf }
+  | white * ( punctuation as c ) 
+      { if not inParagraph then inv # start_paragraph ; 
+	inv # non_letter c ; 
+	continue inDialog true inv lexbuf }
 
   | white * "<<" white * 
-      { if p then (
-  	  Buffer.add_string b " &laquo;&nbsp;" ;
-	  t d p b lexbuf
+      { if inParagraph then (
+	  inv # start_quote ; 
+	  continue inDialog inParagraph inv lexbuf
 	) else (
-  	  Buffer.add_string b "<p class=ds>&laquo;&nbsp;" ;
-	  t true true b lexbuf
+	  inv # start_dialog ;
+	  continue true true inv lexbuf
         ) }
 
   | white * "---" white * 
-      { if d then Buffer.add_string b "</p><p class=d>&mdash;&nbsp;" 
-	else Buffer.add_string b "&mdash;" ;
-	t d p b lexbuf }
+      { if inDialog then inv # next_tirade 
+	else inv # emdash ;
+	continue inDialog inParagraph inv lexbuf }
+
+  | "<em>" { inv # start_emphasis ; continue inDialog inParagraph inv lexbuf }
+  | "</em>" { inv # end_emphasis ; continue inDialog inParagraph inv lexbuf }
+
+  | "<b>" { inv # start_strong ; continue inDialog inParagraph inv lexbuf }
+  | "</b>" { inv # end_strong ; continue inDialog inParagraph inv lexbuf }
 	
+  | "<small>" { inv # start_small ; continue inDialog inParagraph inv lexbuf }
+  | "</small>" { inv # end_small ; continue inDialog inParagraph inv lexbuf }
+		
+  | "<br/>" { inv # line_break ; continue inDialog inParagraph inv lexbuf }
+
   | ('\n' | white) * ">>" white * 
-      { if d then ( 
-          Buffer.add_string b "&nbsp;&raquo;</p>" ;
-          t false false b lexbuf
+      { if inDialog then ( 
+          inv # end_dialog ; 
+          continue false false inv lexbuf
         ) else (
-	  Buffer.add_string b "&nbsp;&raquo; " ;
-	  t d p b lexbuf
+	  inv # end_quote ;
+	  continue inDialog inParagraph inv lexbuf
         ) }
 
-  | ('\n' | white +) 
-      { if p then Buffer.add_char b ' ' ;
-	t d p b lexbuf }
+  | white * ('\n' | white +) 
+      { if inParagraph then inv # non_letter ' ' ;
+	continue inDialog inParagraph inv lexbuf }
+
+  | letter + as str
+      { if not inParagraph then inv # start_paragraph ;
+	inv # word str ;
+	continue inDialog true inv lexbuf }
 
   | _ as c 
-      { if not p then Buffer.add_string b "<p class=t>" ;
-	Buffer.add_char b c ;
-	t d true b lexbuf }
+      { if not inParagraph then inv # start_paragraph ; 
+	inv # non_letter c ;
+	continue inDialog true inv lexbuf }
 
   | eof 
-      { if p then Buffer.add_string b "</p>" }
+      { if inParagraph then inv # end_paragraph }
 
 {
   let clean lexbuf = 
-    let b = Buffer.create 1024 in  
-    t false false b lexbuf ; 
-    Buffer.contents b
+    let inv = new ToHtml.toHtml in 
+    continue false false inv lexbuf ;
+    inv # contents
+
+  let words count lexbuf = 
+    let inv = new ToWords.toWords count in 
+    continue false false inv lexbuf ;
 }
