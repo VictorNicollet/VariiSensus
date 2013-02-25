@@ -1,19 +1,22 @@
+BUILD = ocamlbuild -lib unix -lib str 
 all:
-	ocamlbuild -lib unix make.byte
+	$(BUILD) make.byte
 	./make.byte
 
 graph: 
-	ocamlbuild -lib unix make.native
+	$(BUILD) make.native
 	./make.native --graph
 
 latex : 
-	ocamlbuild -lib unix make.byte
+	$(BUILD) make.byte
 	./make.byte --latex
-	(cd www ; pdflatex book.tex && pdflatex book.tex)
+	rm -f www/*.log www/*.aux www/*.dvi www/*.pdf || echo 'Clean!'
+	(cd www ; latex book.tex && latex book.tex && dvipdfm book.dvi)
+#	(cd www ; pdflatex book.tex && pdflatex book.tex)
 
 make.byte: 
-	ocamlbuild -lib unix make.byte
+	$(BUILD) make.byte
 
 make.native: 
-	ocamlbuild -lib unix make.native
+	$(BUILD) make.native
 
