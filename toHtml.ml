@@ -26,7 +26,9 @@ class toHtml = object
       | '?' | '!' | ':' -> Buffer.add_string buffer "&nbsp;"
       | _ -> () 
     in
-    Buffer.add_char buffer c
+    match c with
+    | '\'' -> Buffer.add_string buffer "&rsquo;" 
+    | _ -> Buffer.add_char buffer c
   method start_quote = 
     Buffer.add_string buffer " &laquo;&nbsp;"
   method start_dialog = 

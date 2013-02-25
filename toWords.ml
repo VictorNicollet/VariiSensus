@@ -1,8 +1,9 @@
 let clean word = 
   String.lowercase word 
 
-class toWords words = object
+class toWords words listref = object
   val words = words
+  val list = listref
   method start_emphasis = () 
   method end_emphasis = () 
   method start_small = () 
@@ -24,6 +25,7 @@ class toWords words = object
     let word = clean word in 
     let count = try Hashtbl.find words word with Not_found -> 0 in
     Hashtbl.remove words word ;
-    Hashtbl.add words word (count + 1)
+    Hashtbl.add words word (count + 1) ;
+    list := word :: !list 
 end
 

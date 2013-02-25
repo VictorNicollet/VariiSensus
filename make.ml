@@ -1,3 +1,137 @@
+let generate_graphs () = 
+
+  let count = Hashtbl.create 1000 in
+  let words = ref [] in
+  let offsets = Array.make (List.length All.all + 1) 0 in   
+  let titles  = Array.of_list (List.map snd All.all) in
+  let i = ref 1 in
+
+  List.iter (fun (path,_) -> 
+    let chan = open_in ("chapters/" ^ path) in 
+    let lexbuf = Lexing.from_channel chan in 
+    Lex.words count words lexbuf ;
+    offsets.(!i) <- List.length !words ;
+    incr i 
+  ) All.all ;
+ 
+  let words = Array.of_list (List.rev !words) in
+
+  (* Prints out some stats to a given file *)
+  let print scale file stat = 
+    
+    print_endline file ; 
+
+    let chapter = ref 1 in
+    let high = Array.fold_left max stat.(0) stat in
+    let low  = Array.fold_left min stat.(0) stat in
+    let delta = high -. low in
+    let sum = ref 0.0 in
+    let chan = open_out file in
+
+    output_string chan "<!DOCTYPE html><html><head><link rel=stylesheet href=\"http://nicollet.net/book/style.css\"/></head><body><div id=graphnav>" ;
+
+    List.iter 
+      (fun name -> output_string chan 
+	("<a href='/book/" ^ String.lowercase name ^"'>" ^ name ^ "</a>"))
+      [ "Frequency" ;
+	"Simmera" ;
+	"Giselle" ;
+	"Ildaric" ;
+	"Nathan" ; 
+	"Staniel" ;
+	"Athanor" ;
+	"Altarane" ; 
+	"Arkadir" ;
+	"Archange" ;
+	"Ygao" ] ;
+
+    output_string chan "</div><div id=page><div id=text><div id=graph>" ;
+
+    for i = 0 to Array.length stat - 1 do 
+
+      (* Display the current chapter box *)
+      if i = offsets.(!chapter - 1) then 
+	( output_string chan "<div class=chapter><h2>" ;
+	  output_string chan titles.(!chapter - 1) ;
+	  output_string chan "</h2><div>" ) ;
+      if i = offsets.(!chapter) - 1 then
+	( output_string chan "</div></div>" ; 
+	  incr chapter ) ;
+
+      sum := !sum +. stat.(i) ; 
+
+      if i mod scale = 0 then begin 
+	
+	let value = !sum /. float_of_int scale in 
+	let value = 100. *. (value -. low) /. delta in
+	let line  = Printf.sprintf "<div style='width:%.2f%%'></div>" value in
+
+	output_string chan line ;
+	sum := 0.0 
+
+      end 
+
+    done ;
+
+    output_string chan "</div></div></div></body></html>" ;
+    close_out chan 
+  in
+
+  (* Apply an involution to an array *)
+  let involution matrix array = 
+    let mid = Array.length matrix / 2 in
+    let n   = Array.length array in 
+    Array.init (Array.length array) (fun i -> 
+      let sum = ref 0. and weight = ref 0. in
+      Array.iteri (fun j w -> 
+	let k = i + j - mid in
+	if k >= 0 && k < n then begin
+	  weight := w +. !weight ;
+	  sum := w *. array.(k) +. !sum
+	end
+      ) matrix ;
+      if !weight > 0. then !sum /. !weight else 0. 
+    ) 
+  in
+
+  (* Gaussian coefficients for involution *)
+  let gauss_factor = 300 in
+  let gauss = Array.init (2 * gauss_factor + 1) (fun i ->
+    let m = gauss_factor in
+    let z = 3. *. float_of_int (i - m) /. float_of_int gauss_factor in
+    exp (z *. z *. -0.5) 
+  ) in
+
+  (* Inverse word frequency *)
+  let () = 
+    print 20 "www/frequency.htm"
+      (involution gauss 
+	 (Array.map 
+	    (fun w -> 1. /. float_of_int (Hashtbl.find count w))
+	    words))
+  in
+
+  let find word = 
+    print 20 ("www/" ^ word ^ ".htm")
+      (involution gauss 
+	 (Array.map 
+	    (fun w -> if w = word then 1. else 0.)
+	    words))
+  in
+  
+  List.iter find [
+    "simmera" ; 
+    "giselle" ; 
+    "ildaric" ;
+    "athanor" ;
+    "staniel" ;
+    "nathan" ; 
+    "ygao" ; 
+    "altarane" ;
+    "arkadir" ;
+    "archange"
+  ]
+
 let generate_words () = 
 
   let count_for name counter =
@@ -17,23 +151,25 @@ let generate_words () =
     List.iter (fun (word, count) ->
       Printf.printf "%3d (%2d%%) %s\n" count (count * 100 / total) word) list ;
 
-    print_newline () 
+    print_newline () ;
 
   in
 
   count_for "All" (fun count -> 
+
     List.iter (fun (path,_) -> 
       let chan = open_in ("chapters/" ^ path) in 
       let lexbuf = Lexing.from_channel chan in 
-      Lex.words count lexbuf 
-    ) All.all 
+      Lex.words count (ref []) lexbuf ;
+    ) All.all ;
+
   ) ;
 
   List.iter (fun (path,name) ->
     count_for name (fun count -> 
       let chan = open_in ("chapters/" ^ path) in 
       let lexbuf = Lexing.from_channel chan in 
-      Lex.words count lexbuf 
+      Lex.words count (ref []) lexbuf 
     )
   ) All.all 
 
@@ -256,4 +392,6 @@ let () =
     page404 () ; 
   end else if Sys.argv.(1) = "--words" then begin
     generate_words () 
-  end 
+  end else if Sys.argv.(1) = "--graph" then begin 
+    generate_graphs () 
+  end

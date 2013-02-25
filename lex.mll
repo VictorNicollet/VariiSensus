@@ -7,9 +7,9 @@ let letter = ( ['a' - 'z' 'A' - 'Z']
 		 | "ô" | "Ô" | "ö" | "Ö" | "œ" | "Œ" 
 		 | "î" | "Î" | "ï" | "Ï" 
 		 | "ç" | "Ç" 
-		 | "-" | "'" ) 
+		 | "-" ) 
 
-let punctuation = [ '?' '!' ':' ] 
+let punctuation = [ '?' '!' ':' '\'' ] 
 
 rule continue inDialog inParagraph inv = parse
 
@@ -80,7 +80,7 @@ rule continue inDialog inParagraph inv = parse
     continue false false inv lexbuf ;
     inv # contents
 
-  let words count lexbuf = 
-    let inv = new ToWords.toWords count in 
+  let words count listref lexbuf = 
+    let inv = new ToWords.toWords count listref in 
     continue false false inv lexbuf ;
 }
