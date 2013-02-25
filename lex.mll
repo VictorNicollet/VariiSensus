@@ -82,5 +82,8 @@ rule continue inDialog inParagraph inv = parse
 
   let words count listref lexbuf = 
     let inv = new ToWords.toWords count listref in 
-    continue false false inv lexbuf ;
+    continue false false inv lexbuf 
+
+  let latex (inv:ToLatex.toLatex) lexbuf = 
+    continue false false inv lexbuf 
 }

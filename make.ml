@@ -383,6 +383,20 @@ let generate_index () =
 let page404 () = 
   generate None ("404","Page Non Trouvée") None 
 
+let generate_latex () = 
+  let inv = new ToLatex.toLatex in
+  List.iter (fun (path, name) -> 
+    inv # start_chapter name ;
+    let chan = open_in ("chapters/" ^ path) in 
+    let lexbuf = Lexing.from_channel chan in 
+    Lex.latex inv lexbuf ;
+    close_in chan 
+  ) All.all ;
+  print_endline "www/book.tex" ;
+  let chan = open_out "www/book.tex" in
+  output_string chan (inv # contents) ;
+  close_out chan 
+
 let () = 
   if Array.length Sys.argv = 1 then begin 
     generate_all () ;
@@ -390,6 +404,8 @@ let () =
     generate_rss () ;
     generate_index () ;
     page404 () ; 
+  end else if Sys.argv.(1) = "--latex" then begin 
+    generate_latex () ;
   end else if Sys.argv.(1) = "--words" then begin
     generate_words () 
   end else if Sys.argv.(1) = "--graph" then begin 
