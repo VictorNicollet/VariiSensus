@@ -5,7 +5,7 @@ let all =
     "4",  "Sans-Visage" ;
     "5",  "Didalane" ;
     "6",  "Cauchemars" ;
-    "7",  "Aphorismes" ;
+    "7",  "Apocryphe" ;
     "8",  "Le Soiffard" ;
     "9",  "Apocalypse" ;
     "10", "Théologie" ;
