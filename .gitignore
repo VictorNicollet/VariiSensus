@@ -1,0 +1,7 @@
+www/*
+*~
+chapters/*~
+_build
+chapters/_build
+*.byte
+*.native
