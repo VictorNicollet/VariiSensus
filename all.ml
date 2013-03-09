@@ -43,8 +43,8 @@ let all =
     "42", "Immortels" ;
     "43", "Mygaën" ;
     "44", "Histoire" ;
-    "45", "Gwenadir" ;
-    "46", "Altarane" ; 
-    "47", "Nagovie" ; 
+    "45", "Altarane" ; 
+    "46", "Nagovie" ; 
+    "47", "Gwenadir" ;
     "48", "Varii&#160;Sensus" ;
   ]
