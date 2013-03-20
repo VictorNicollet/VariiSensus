@@ -1,4 +1,5 @@
 let all = 
+  (* Book 1 *)
   [ "1",  "Athanor" ;
     "2",  "Mynari" ;
     "3",  "Erenheim" ;
@@ -47,4 +48,14 @@ let all =
     "46", "Nagovie" ; 
     "47", "Gwenadir" ;
     "48", "Varii&#160;Sensus" ;
+  (* Book 2 *)
   ]
+
+let rec sub s e = function 
+  | [] -> []
+  | x :: xs -> 
+    if s = 0 then 
+      if e = 0 then [] else x :: sub 0 (e - 1) xs
+    else sub (s - 1) e xs
+
+let book_1 = sub 0 48 all

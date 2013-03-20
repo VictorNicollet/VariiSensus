@@ -391,7 +391,7 @@ let generate_latex () =
     let lexbuf = Lexing.from_channel chan in 
     Lex.latex inv lexbuf ;
     close_in chan 
-  ) All.all ;
+  ) All.book_1 ;
   print_endline "www/book.tex" ;
   let chan = open_out "www/book.tex" in
   output_string chan (inv # contents) ;

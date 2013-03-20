@@ -14,15 +14,15 @@ let head = "\\documentclass[10pt,twocolumn]{article}
 
 let finalhead = "\\documentclass[10pt,openany]{book}
 
-\\usepackage[papersize={6in,8in},margin=1.2cm]{geometry}
+\\usepackage[papersize={4.5in,6in},margin=0.5in]{geometry}
 
 \\usepackage[utf8]{inputenc}
 \\usepackage[frenchb]{babel}
 
-\\usepackage{bookman}
+\\usepackage{lmodern}
 \\usepackage[T1]{fontenc}
 
-\\title{Varii Sensus}
+\\title{Un monde qui meurt}
 \\author{Victor Nicollet}
 
 \\usepackage{setspace}
