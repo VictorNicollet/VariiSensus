@@ -1,7 +1,7 @@
 let all = 
   (* Book 1 *)
-  [ "1",  "Athanor" ;
-    "2",  "Mynari" ;
+  [ "1",  "Giselle Guirevennec" ;
+    "2",  "Fanatiques" ;
     "3",  "Erenheim" ;
     "4",  "Sans-Visage" ;
     "5",  "Didalane" ;
@@ -18,10 +18,10 @@ let all =
     "16", "Suidaster" ;
     "17", "Mémoire" ;
     "18", "Hans Banach" ;
-    "19", "Simmera" ;
+    "19", "Simmera Jottun" ;
     "20", "Geerart" ;
-    "21", "Benjamin" ; 
-    "22", "Guirevennec" ;
+    "21", "Saint Benjamin" ; 
+    "22", "Votre Monde" ;
     "23", "Invasion" ;
     "24", "Archange" ;
     "25", "Josephus" ;
@@ -33,21 +33,21 @@ let all =
     "31", "Croisière" ;
     "32", "Patriarche" ;
     "33", "Poison" ;
-    "34", "Nature&#160;Divine" ;
-    "35", "Lucrèce" ;
-    "36", "Sébastien" ; 
-    "37", "Jeanne" ;
-    "38", "Adinn" ;
-    "39", "Abyssales" ;
-    "40", "Empire" ;
-    "41", "La&#160;Morgue" ;
+    "34", "Nature Divine" ;
+    "35", "Lucrèce Neerus" ;
+    "36", "Saint Sébastien" ; 
+    "37", "Jeanne Nigelle" ;
+    "38", "Adinns et Adirs" ;
+    "39", "Les Abyssales" ;
+    "40", "L'Empire" ;
+    "41", "La Morgue" ;
     "42", "Immortels" ;
-    "43", "Mygaën" ;
+    "43", "Maison Mygaën" ;
     "44", "Histoire" ;
-    "45", "Altarane" ; 
+    "45", "Maison Altarane" ; 
     "46", "Nagovie" ; 
     "47", "Gwenadir" ;
-    "48", "Varii&#160;Sensus" ;
+    "48", "Varii Sensus" ;
   (* Book 2 *)
   ]
 
