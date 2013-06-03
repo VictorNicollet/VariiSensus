@@ -5,3 +5,4 @@ _build
 chapters/_build
 *.byte
 *.native
+epub/*
