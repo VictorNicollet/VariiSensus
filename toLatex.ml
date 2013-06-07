@@ -35,8 +35,33 @@ let finalhead = "\\documentclass[10pt,openany]{book}
 
 \\pagestyle{empty}
 
-\\maketitle
 "
+
+let fin = "
+\\clearpage
+\\section*{Le mot de l'auteur}
+\\singlespace
+\\vfill
+{\\small
+Merci d'avoir lu ce livre jusqu'au bout ! Dites-moi ce que vous en avez pensé, ou inscrivez-vous pour être prévenus lorsque le \\textbf{tome 2} sera publié:
+
+\\verb+http://nicollet.net/le-culte-de-l-archange+}
+
+\\begin{flushright}
+Victor Nicollet
+\\end{flushright}
+
+\\vfill
+
+\\begin{center}
+
+{\\tiny
+  \\textcircled{c} 2013 Victor Nicollet\\\\
+  Couverture \\textcircled{c} Lucian Stanculescu
+}
+
+\\end{center}
+\\end{document}\n"
 
 let final = true
 
@@ -89,7 +114,7 @@ class toLatex = object
     Buffer.add_string buffer word
 
   method contents = 
-    Buffer.contents buffer ^ "\n\\end{document}\n"
+    Buffer.contents buffer ^ "\n" ^ fin
 
 end
 
