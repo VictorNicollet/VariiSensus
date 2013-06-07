@@ -10,11 +10,21 @@ let head = "\\documentclass[10pt,twocolumn]{article}
 \\setlength{\\parskip}{0.5cm}
 
 \\begin{document}
+
+\\begin{flushright}
+  \\huge{Le Culte de l'Archange}\\\\
+  \\large{Victor Nicollet}
+\\end{flushright}
+
+\\clearpage
+\\includegraphics{cover.eps}
+\\clearpage
+\\includegraphics{map.eps}
 "
 
 let finalhead = "\\documentclass[10pt,openany]{book}
 
-\\usepackage[papersize={4.5in,6in},margin=0.5in]{geometry}
+\\usepackage[papersize={5in,8in},margin=0.75in]{geometry}
 
 \\usepackage[utf8]{inputenc}
 \\usepackage[frenchb]{babel}
@@ -28,6 +38,9 @@ let finalhead = "\\documentclass[10pt,openany]{book}
 \\usepackage{setspace}
 \\doublespace
 
+\\usepackage{graphicx}
+\\usepackage{changepage}
+
 \\setlength{\\parindent}{0in}
 \\setlength{\\parskip}{0.4cm}
 
@@ -35,6 +48,34 @@ let finalhead = "\\documentclass[10pt,openany]{book}
 
 \\pagestyle{empty}
 
+\\changepage{2in}{3in}{-0.75in}{-0.75in}{0in}{-0.75in}{0in}{0in}{0in}
+\\includegraphics[width=5in]{cover.eps}
+
+\\clearpage
+
+\\changepage{-2in}{-3in}{0.75in}{0.75in}{0in}{0.75in}{0in}{0in}{0in}
+
+\\begin{flushright}
+
+  \\verb+ +
+
+  \\vfill
+  \\huge{Le Culte de l'Archange}\\\\
+  \\large{Victor Nicollet}
+
+  \\vfill
+
+  {\\small à Alix, pour ta patience}
+
+  \\vfill
+
+\\end{flushright}
+
+\\clearpage
+
+\\changepage{0in}{1.5in}{-0.75in}{-0.75in}{0in}{0in}{0in}{0in}{0in}
+\\includegraphics[width=4in]{map.eps}
+\\changepage{0in}{-1.5in}{0.75in}{0.75in}{0in}{0in}{0in}{0in}{0in}
 "
 
 let fin = "

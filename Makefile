@@ -25,7 +25,14 @@ ePub : www/epub/OEBPS/map.png www/epub/OEBPS/cover.png
 	cp epub/toc.ncx www/epub/OEBPS
 	(cd www/epub ; zip -r ../book.epub *)
 
-latex : 
+www/cover.eps: cover.png
+	convert cover.png -resize 600x800\> www/cover.eps
+
+www/map.eps: map-athanor.png
+	convert map-athanor.png -resize 600x800\> -size 600x800 'xc:white' +swap -gravity center -composite www/map.eps
+
+
+latex : www/cover.eps www/map.eps
 	$(BUILD) make.byte
 	./make.byte --latex
 	rm -f www/*.log www/*.aux www/*.dvi www/*.pdf || echo 'Clean!'
