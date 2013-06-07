@@ -73,9 +73,11 @@ let finalhead = "\\documentclass[10pt,openany]{book}
 
 \\clearpage
 
-\\changepage{0in}{1.5in}{-0.75in}{-0.75in}{0in}{0in}{0in}{0in}{0in}
-\\includegraphics[width=4in]{map.eps}
-\\changepage{0in}{-1.5in}{0.75in}{0.75in}{0in}{0in}{0in}{0in}{0in}
+\\changepage{0in}{1in}{-0.5in}{-0.5in}{0in}{0in}{0in}{0in}{0in}
+\\includegraphics[width=4.5in]{map.eps}
+
+\\clearpage
+\\changepage{0in}{-1in}{0.5in}{0.5in}{0in}{0in}{0in}{0in}{0in}
 "
 
 let fin = "
