@@ -14,7 +14,8 @@ id=\"bookid\">urn:http//nicollet.net/book-1</dc:identifier>
   <manifest>
     <item id=\"ncx\" href=\"toc.ncx\" media-type=\"application/x-dtbncx+xml\"/>
     <item id=\"cover\" href=\"title.htm\" media-type=\"application/xhtml+xml\"/>
-    <item id=\"map\" href=\"map.htm\" media-type=\"application/xhtml+xml\"/>"
+    <item id=\"map\" href=\"map.htm\" media-type=\"application/xhtml+xml\"/>
+    <item id=\"credits\" href=\"credits.htm\" media-type=\"application/xhtml+xml\"/>"
 
 let opf_mid = 
 "    <item id=\"cover-image\" href=\"cover.png\" media-type=\"image/png\"/>
@@ -26,8 +27,9 @@ let opf_mid =
     <itemref idref=\"map\" linear=\"no\"/>
 "
 
-let opf_foot =
-"  </spine>
+let opf_foot = "  
+    <itemref idref=\"credits\" linear=\"no\"/>
+    </spine>
   <guide>
     <reference href=\"title.htm\" type=\"cover\" title=\"Le Culte de l'Archange\"/>
   </guide>
@@ -72,8 +74,14 @@ let ncx_item (path,title) =
     </navPoint>"
     path (2 + int_of_string path) path title path
 
-let ncx_foot = 
-"  </navMap>
+let ncx_foot = "  
+    <navPoint id=\"credits\" playOrder=\"50\">
+      <navLabel>
+        <text>Le mot de l'auteur</text>
+      </navLabel>
+      <content src=\"credits.htm\"/>
+    </navPoint>
+   </navMap>
 </ncx>"
 
 let head chap = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>

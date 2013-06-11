@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Le Culte de l'Archange - Roman</title>
+  <link rel="stylesheet" type="text/css" 
+	href="/le-culte-de-l-archange/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Le Culte de l'Archange</h1>
+    <div id="subtitle">&nbsp;</div>
+  </div>
+  <div class="container">
+    <img id="cover" src="/le-culte-de-l-archange/cover.png"/>
+  </div>
+  <script type="text/javascript" 
+	  src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script type="text/javascript">
+$(function(){
+  var subtitles = [
+    "Une dose de Fantasy avec des vrais morceaux de secret dedans",
+    "Comme de l'Heroic-Fantasy, mais totalement différent",
+    "Neuf immortels sur dix vous recommandent ce roman",
+    "Un roman qui ne tue pas vos héros les uns après les autres",
+    "De la Fantasy, sans les bikinis en cotte de mailles",
+    "Dieu n'est pas mort, mais il est très, très déprimé",
+    "Nos vieux magiciens barbus sont différents",
+    "Addictif. Mais entre nous, qui a besoin de dormir ?",
+    "Si les symptômes persistent, consultez votre libraire",
+    "Il faut garder la foi. Si possible, enfermée à clef.",
+    "Vous ne lirez plus la Fantasy de la même façon"
+  ];
+  $("#subtitle").text(subtitles[Math.floor(Math.random()*subtitles.length)]);
+});
+  </script>
+</body>
+</html>
