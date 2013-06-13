@@ -86,7 +86,7 @@ let fin = "
 \\singlespace
 \\vfill
 {\\small
-Merci d'avoir lu ce livre jusqu'au bout ! Dites-moi ce que vous en avez pensé, ou inscrivez-vous pour être prévenus lorsque le \\textbf{tome 2} sera publié:
+J'espère que ce court extrait a attisé votre curiosité. Si vous souhaitez lire la suite, rendez-vous sur :
 
 \\verb+http://nicollet.net/le-culte-de-l-archange+}
 

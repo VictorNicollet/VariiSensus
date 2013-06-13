@@ -75,3 +75,23 @@ a.call-to-action:hover {
   margin: 40px 0;
   text-align: center;
 }
+
+a.call-to-inaction {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #666;
+  border-radius: 3px;
+  color: #FFF;
+  font-size: 18px;
+  text-shadow: 0 -1px 0 #666;
+  background-color: #888;
+  background: -webkit-linear-gradient(-80deg,#AAA,#888);
+  background: -moz-linear-gradient(-80deg,#AAA,#888);
+  padding: 5px 12px;
+}
+
+a.call-to-inaction:hover {
+  background-color: #999;
+  background: -webkit-linear-gradient(-80deg,#AAA,#999);
+  background: -moz-linear-gradient(-80deg,#AAA,#999);
+}
