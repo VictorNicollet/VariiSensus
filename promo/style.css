@@ -5,7 +5,12 @@ body {
   background-image: url("ticks.png");
   color: #333;
   font-family: 'Noto Sans', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
+}
+
+strong {
+  font-weight: normal;
+  color: black;
 }
 
 .container {
@@ -29,10 +34,44 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 18px;
   color: #555;
   height: 24px;
-  margin: 0 0 30px;
+  margin: 0 0 40px;
 }
 
 #cover {
   float: right;
   box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  width: 350px;
+}
+
+div.by-cover {
+  width: 470px;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+a.call-to-action {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #080;
+  border-radius: 3px;
+  color: #FFF;
+  font-size: 18px;
+  text-shadow: 0 -1px 0 #080;
+  background-color: #3B3;
+  background: -webkit-linear-gradient(-80deg,#4C4,#2A2);
+  background: -moz-linear-gradient(-80deg,#4C4,#2A2);
+  padding: 5px 12px;
+}
+
+a.call-to-action:hover {
+  background-color: #4A4;
+  background: -webkit-linear-gradient(-80deg,#4C4,#3B3);
+  background: -moz-linear-gradient(-80deg,#4C4,#3B3);
+}
+
+.action-center {
+  margin: 40px 0;
+  text-align: center;
 }

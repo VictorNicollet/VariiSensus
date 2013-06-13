@@ -12,6 +12,46 @@
   </div>
   <div class="container">
     <img id="cover" src="/le-culte-de-l-archange/cover.png"/>
+    <div class="by-cover">
+      <p>
+	Simmera est une novice du Culte de l'Archange, l'unique ordre
+	religieux sur l'île d'Athanor. D'ici quelques semaines, elle
+	deviendra juge et siègera aux tribunaux de l'Inquisition.
+      </p>
+      <p>
+	Giselle est une doctorante de l'Institut Royal des Sciences,
+	fondé par Sa Majesté Elias IV, roi d'Athanor et fervent ennemi
+	du Culte. D'ici quelques semaines, elle entamera une expédition
+	qui, aux yeux de l'Archange, mérite la peine de mort.
+      </p>
+      <p>
+	Réunies par le sort, les deux héroïnes sont projetées au milieu
+	de la guerre secrète entre le Culte et la Couronne. Ensemble,
+	elles devront déjouer l'Apocalypse annoncée par les prophètes,
+	percer les mystères d'Athanor et comprendre l'origine de l'épais 
+	brouillard qui entoure l'île.
+      </p>
+      <div class="action-center">
+	<a class="call-to-action"
+	   href="http://www.amazon.fr/dp/B00D9B3O7S"
+	   onclick="_gaq.push(['_trackEvent', 'conversion', 'go-to-amazon']);">
+	  Acheter sur Amazon.fr
+	</a>
+      </div>
+      <p>
+	Avec <strong>Le Culte de l'Archange</strong>, Victor Nicollet
+	commence une nouvelle saga&nbsp;: celle du Varii Sensus, un
+	pouvoir mystérieux et absolu capable de transformer des mondes
+	entiers, et qui suscite bien des convoitises.
+      </p>
+      <p>
+	Ecrit dans un style simple et direct, ce premier tome explore
+	l'univers à travers des yeux innocents. Les surprises
+	s'enchaînent sans décevoir, les secrets se suivent sans être
+	tirés par les cheveux, et les trahisons parfois brutales
+	restent crédibles et jouissives.
+      </p>
+    </div>
   </div>
   <script type="text/javascript" 
 	  src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -28,10 +68,34 @@ $(function(){
     "Addictif. Mais entre nous, qui a besoin de dormir ?",
     "Si les symptômes persistent, consultez votre libraire",
     "Il faut garder la foi. Si possible, enfermée à clef.",
-    "Vous ne lirez plus la Fantasy de la même façon"
+    "Vous ne lirez plus la Fantasy de la même façon",
+    "Une dose de Dark Fantasy, pour vous mettre de bonne humeur",
+    "Le meilleur roman jamais publié un 6 juin 2013",
+    "Achetez-le. Votre liseuse électronique vous dira merci.",
+    "Faites-vous du mal en attendant la saison quatre"
   ];
   $("#subtitle").text(subtitles[Math.floor(Math.random()*subtitles.length)]);
 });
+
+setTimeout(function(){
+  _gaq.push(['_trackEvent', 'page', 'stay-10-seconds']);
+},10000);
+
+var scrolled = false;
+$(window).scroll(function(){
+  if (scrolled) return;
+  _gaq.push(['_trackEvent', 'page', 'scroll']);
+});
+  </script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34610151-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = 'http://www.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
   </script>
 </body>
 </html>
