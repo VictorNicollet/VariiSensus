@@ -31,8 +31,11 @@ www/cover.eps: cover.png
 www/map.eps: map-athanor.png
 	convert map-athanor.png -resize 600x800\> -size 600x800 'xc:white' +swap -gravity center -composite www/map.eps
 
+www/map-big.eps: map-athanor.png
+	convert map-athanor.png -resize 1200x1600\> -size 1200x1600 'xc:white' +swap -gravity center -composite www/map-big.eps
 
-latex : www/cover.eps www/map.eps
+
+latex : www/cover.eps www/map.eps www/map-big.eps
 	$(BUILD) make.byte
 	./make.byte --latex
 	rm -f www/*.log www/*.aux www/*.dvi www/*.pdf || echo 'Clean!'

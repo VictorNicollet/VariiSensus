@@ -3,7 +3,7 @@ let all =
   [ "1",  "Giselle Guirevennec" ;
     "2",  "Fanatiques" ;
     "3",  "Erenheim" ;
-(*
+(**)
     "4",  "Sans-Visage" ;
     "5",  "Didalane" ;
     "6",  "Cauchemars" ;
@@ -49,7 +49,7 @@ let all =
     "46", "Nagovie" ; 
     "47", "Gwenadir" ;
     "48", "Varii Sensus" ;
-*)
+(**)
   (* Book 2 *)
   ]
 

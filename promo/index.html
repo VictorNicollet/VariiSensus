@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
   <title>Le Culte de l'Archange - Roman</title>
   <link rel="stylesheet" type="text/css" 
 	href="/le-culte-de-l-archange/style.css"/>
+  <meta property="fb:admins" content="517629600"/>
 </head>
 <body>
   <div class="container">
@@ -44,18 +45,31 @@
 	</a>
       </div>
       <p>
-	Avec <strong>Le Culte de l'Archange</strong>, Victor Nicollet
-	commence une nouvelle saga&nbsp;: celle du Varii Sensus, un
+	Avec <strong>Le Culte de l'Archange</strong>, j'ai voulu
+	commencer une nouvelle saga&nbsp;: celle du Varii Sensus, un
 	pouvoir mystérieux et absolu capable de transformer des mondes
-	entiers, et qui suscite bien des convoitises.
+	entiers, et qui suscite bien des convoitises. Le deuxième
+	tome, <strong>Les filles du Cauchemar</strong>, est en
+	chantier en ce moment même.
       </p>
       <p>
-	Ecrit dans un style simple et direct, ce premier tome explore
-	l'univers à travers des yeux innocents. Les surprises
-	s'enchaînent sans décevoir, les secrets se suivent sans être
-	tirés par les cheveux, et les trahisons parfois brutales
-	restent crédibles et jouissives.
+	Pour ce livre, j'ai voulu un style simple et direct, pour
+	explorer l'univers à travers les yeux innocents de mes deux
+	protagonistes, pour donner plus de poids aux surprises, aux
+	secrets et aux trahisons. J'espère que vous prendrez beaucoup
+	de plaisir à le lire&nbsp;!
       </p>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="container">    
+    <div class="like">
+      <fb:like-box href="https://www.facebook.com/LeCulteDeLArchange" width="292" show_faces="true" stream="false" show_border="true" header="false"></fb:like-box>
+    </div>
+    <div class="comments">
+      <fb:comments href="http://nicollet.net/le-culte-de-l-archange" width="470" num_posts="20"></fb:comments>
     </div>
   </div>
   <script type="text/javascript" 
@@ -89,6 +103,7 @@ setTimeout(function(){
 var scrolled = false;
 $(window).scroll(function(){
   if (scrolled) return;
+  scrolled = true;
   _gaq.push(['_trackEvent', 'page', 'scroll']);
 });
   </script>
@@ -101,6 +116,25 @@ $(window).scroll(function(){
       ga.src = 'http://www.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
+  </script>
+  <div id="fb-root"></div>
+  <script>
+window.fbAsyncInit = function() {
+  FB.Event.subscribe("comment.create",function(){
+    _gaq.push(['_trackEvent','page','comment']);
+  });
+  FB.Event.subscribe("edge.create",function(){
+    _gaq.push(['_trackEvent','page','create']);
+  });
+};
+
+(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=149517945110087";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
   </script>
 </body>
 </html>

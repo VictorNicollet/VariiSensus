@@ -22,6 +22,7 @@ let head = "\\documentclass[10pt,twocolumn]{article}
 \\includegraphics{map.eps}
 "
 
+(* Old final head 
 let finalhead = "\\documentclass[10pt,openany]{book}
 
 \\usepackage[papersize={5in,8in},margin=0.75in]{geometry}
@@ -79,14 +80,96 @@ let finalhead = "\\documentclass[10pt,openany]{book}
 \\clearpage
 \\changepage{0in}{-1in}{0.5in}{0.5in}{0in}{0in}{0in}{0in}{0in}
 "
+*)
+
+
+let finalhead = "\\documentclass[10pt,openleft,twoside]{book}
+
+\\usepackage[papersize={5in,8in},margin={0.6in,0.75in}]{geometry}
+
+\\setlength{\\oddsidemargin}{-1in}
+\\setlength{\\evensidemargin}{-1in}
+\\addtolength{\\oddsidemargin}{0.6in}
+\\addtolength{\\evensidemargin}{0.6in}
+
+\\addtolength{\\oddsidemargin}{0.2in}
+\\addtolength{\\evensidemargin}{-0.2in}
+
+\\usepackage[utf8]{inputenc}
+
+\\usepackage{titlesec}
+\\usepackage{color}
+\\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\\titleformat{\\chapter}[hang]{\\LARGE\\bfseries}{\\textcolor{gray}{\\thechapter\\ · }}{0pt}{\\LARGE\\bfseries\\sc}
+\\titlespacing{\\chapter}{0pt}{-30pt}{10pt}
+
+\\usepackage[frenchb]{babel}
+
+\\usepackage{lmodern}
+\\usepackage[T1]{fontenc}
+
+\\makeatletter
+\\renewcommand*\\cleardoublepage{\\clearpage\\if@twoside
+  \\ifodd\\c@page \\hbox{}\\newpage\\if@twocolumn\\hbox{}%
+  \\newpage\\fi\\fi\\fi}
+\\makeatother
+
+\\author{Victor Nicollet}
+
+\\usepackage{setspace}
+\\onehalfspace
+
+\\usepackage{graphicx}
+\\usepackage{changepage}
+
+\\setlength{\\parindent}{0in}
+\\setlength{\\parskip}{0.4cm}
+
+\\begin{document}
+
+\\sloppy
+
+\\pagestyle{plain}
+\\thispagestyle{empty}
+
+\\begin{flushright}
+
+  \\verb+ +
+
+  \\vfill
+  \\huge{Le Culte de l'Archange}\\\\
+  \\large{Victor Nicollet}
+
+  \\vfill
+
+  {\\small à Alix, pour ta patience}
+
+  \\vfill
+
+\\end{flushright}
+
+\\clearpage
+
+\\thispagestyle{empty}
+\\verb+ +
+
+\\clearpage
+
+\\thispagestyle{empty}
+
+\\includegraphics[width=3.8in]{map-big.eps}
+
+\\clearpage
+"
 
 let fin = "
-\\clearpage
+\\cleardoublepage
+\\thispagestyle{empty}
 \\section*{Le mot de l'auteur}
 \\singlespace
 \\vfill
 {\\small
-J'espère que ce court extrait a attisé votre curiosité. Si vous souhaitez lire la suite, rendez-vous sur :
+J'espère que vous avez pris beaucoup de plaisir à lire ce roman ! Pour vous tenir au courant de la sortie du Tome 2, rendez-vous sur :
 
 \\verb+http://nicollet.net/le-culte-de-l-archange+}
 
