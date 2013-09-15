@@ -57,7 +57,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3869"
-       id="radialGradient3192"
+       id="radialGradient3150"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.215923,2.8116418,-2.2446491,0.17238023,1157.9639,1358.3158)"
        cx="-208.49086"
@@ -67,32 +67,32 @@
        r="230.625" />
     <clipPath
        clipPathUnits="userSpaceOnUse"
-       id="clipPath3334">
+       id="clipPath3246">
       <g
-         style="display:inline"
+         id="g3248"
          transform="translate(-463.86529,442.71606)"
-         id="g3336">
+         style="display:inline">
         <rect
-           y="326.64764"
-           x="-574.90735"
-           height="742.5"
+           style="opacity:0.25;fill:#ff0000;fill-opacity:1;stroke:none"
+           id="rect3250"
            width="999.90002"
-           id="rect3338"
+           height="742.5"
+           x="-574.90735"
+           y="326.64764" />
+        <rect
+           y="337.89764"
+           x="-563.65735"
+           height="720"
+           width="977.40002"
+           id="rect3252"
            style="opacity:0.25;fill:#ff0000;fill-opacity:1;stroke:none" />
         <rect
-           style="opacity:0.25;fill:#ff0000;fill-opacity:1;stroke:none"
-           id="rect3340"
-           width="977.40002"
-           height="720"
-           x="-563.65735"
-           y="337.89764" />
-        <rect
-           style="opacity:0.25;fill:#ff0000;fill-opacity:1;stroke:none"
-           id="rect3342"
-           width="77.580002"
-           height="742.5"
+           y="326.64764"
            x="-113.74734"
-           y="326.64764" />
+           height="742.5"
+           width="77.580002"
+           id="rect3254"
+           style="opacity:0.25;fill:#ff0000;fill-opacity:1;stroke:none" />
       </g>
     </clipPath>
   </defs>
@@ -103,9 +103,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.88100035"
-     inkscape:cx="-587.61033"
-     inkscape:cy="35.148051"
+     inkscape:zoom="0.5"
+     inkscape:cx="-763.75669"
+     inkscape:cy="-77.251099"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -115,8 +115,8 @@
      borderlayer="true"
      inkscape:window-width="1366"
      inkscape:window-height="706"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-x="1672"
+     inkscape:window-y="274"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -137,24 +137,36 @@
      transform="translate(0,-309.85675)"
      style="display:inline">
     <g
-       id="g3277"
-       clip-path="url(#clipPath3334)">
+       id="g3195"
+       clip-path="url(#clipPath3246)">
+      <text
+         transform="translate(0,309.85675)"
+         sodipodi:linespacing="125%"
+         id="text3089"
+         y="1138.6406"
+         x="-981.83844"
+         style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         xml:space="preserve"><tspan
+           y="1138.6406"
+           x="-981.83844"
+           id="tspan3091"
+           sodipodi:role="line" /></text>
       <rect
          y="764.66864"
          x="-1050.827"
          height="769.8114"
          width="473.19873"
          id="rect3015"
-         style="fill:url(#radialGradient3192);fill-opacity:1;stroke:none" />
+         style="fill:url(#radialGradient3150);fill-opacity:1;stroke:none" />
       <rect
          style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:#1a1a1a;stroke-width:0.50983596;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect3017"
-         width="302.15683"
-         height="382.7879"
-         x="-945.36047"
+         width="352.10007"
+         height="332.84467"
+         x="-995.30371"
          y="918.12061" />
       <flowRoot
-         transform="matrix(0.78443527,0,0,0.78443527,-545.09403,859.24041)"
+         transform="matrix(0.78443527,0,0,0.78443527,-596.17233,859.24041)"
          style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:135.00000238%;letter-spacing:0px;word-spacing:0px;fill:#e6e6e6;fill-opacity:1;stroke:none;font-family:Lucida Bright;-inkscape-font-specification:Lucida Bright"
          id="flowRoot3807"
          xml:space="preserve"><flowRegion
@@ -162,8 +174,8 @@
              style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:135.00000238%;fill:#e6e6e6;font-family:Lucida Bright;-inkscape-font-specification:Lucida Bright"
              y="103.78636"
              x="-488.19141"
-             height="521.87354"
-             width="345.38538"
+             height="516.08557"
+             width="410.50012"
              id="rect3811" /></flowRegion><flowPara
            id="flowPara3813">Simmera est une novice du Culte de l'Archange, l'unique ordre religieux sur l'île d'Athanor. D'ici quelques semaines, elle deviendra juge et siègera aux tribunaux de l'Inquisition.</flowPara><flowPara
            id="flowPara3815" /><flowPara
@@ -189,7 +201,7 @@
          xml:space="preserve"
          id="flowRoot3774"
          style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;opacity:0.5;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Lucida Bright;-inkscape-font-specification:Lucida Bright"
-         transform="matrix(0.43311826,0,0,0.43108031,-400.29323,1023.4499)"><flowRegion
+         transform="matrix(0.43311826,0,0,0.43108031,-402.29323,1023.4499)"><flowRegion
            id="flowRegion3776"><rect
              id="rect3778"
              width="434"
@@ -199,7 +211,7 @@
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;fill:#ffffff;stroke:none;font-family:Lucida Bright;-inkscape-font-specification:Lucida Bright" /></flowRegion><flowPara
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;stroke:none;font-family:Lucida Bright;-inkscape-font-specification:Lucida Bright"
            id="flowPara3780">Victor Nicollet</flowPara></flowRoot>      <g
-         transform="matrix(0.89066592,0,0,0.89066592,-25.856937,124.465)"
+         transform="matrix(0.80609661,0,0,0.80609661,-51.078072,226.92596)"
          id="g3249">
         <flowRoot
            xml:space="preserve"
@@ -236,7 +248,7 @@
          x="-579.11273"
          y="736.1701" />
       <flowRoot
-         transform="matrix(0,-0.75543197,0.75187744,0,-925.91963,1554.535)"
+         transform="matrix(0,-0.60981975,0.60695037,0,-849.96879,1510.8712)"
          style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Lucida Bright;-inkscape-font-specification:Lucida Bright"
          id="flowRoot3774-4"
          xml:space="preserve"><flowRegion
@@ -251,7 +263,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;fill:#ffffff;stroke:none;font-family:Lucida Bright;-inkscape-font-specification:Lucida Bright">Victor Nicollet</flowPara></flowRoot>      <g
          style="opacity:0.75"
          id="g3259"
-         transform="matrix(0,-0.79117261,0.79117261,0,-1500.2209,794.32084)">
+         transform="matrix(0,-0.6271715,0.6271715,0,-1298.1182,839.35245)">
         <flowRoot
            transform="matrix(1.06415,0,0,1.06415,-512.47476,666.45522)"
            style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#ffffff;fill-opacity:1;stroke:none;font-family:'Modern No. 20';-inkscape-font-specification:'Modern No. 20,'"
@@ -279,11 +291,23 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;letter-spacing:0px;text-anchor:end;fill:#ffffff;stroke:none;font-family:'Modern No. 20';-inkscape-font-specification:'Modern No. 20,'" /></flowRegion><flowPara
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Lucida Bright;-inkscape-font-specification:Lucida Bright"
              id="flowPara3275">Le Culte de l'</flowPara></flowRoot>      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3093"
+         y="1465.1823"
+         x="-994.56781"
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;font-family:Freestyle Script;-inkscape-font-specification:Freestyle Script"
+         xml:space="preserve"><tspan
+           style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Arial;-inkscape-font-specification:Arial"
+           y="1465.1823"
+           x="-994.56781"
+           id="tspan3095"
+           sodipodi:role="line">14,99 €</tspan></text>
     </g>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Layer"
-     style="display:none" />
+     style="display:inline" />
 </svg>
