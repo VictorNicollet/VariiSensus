@@ -108,12 +108,6 @@ let finalhead = "\\documentclass[10pt,openleft,twoside]{book}
 \\usepackage{lmodern}
 \\usepackage[T1]{fontenc}
 
-\\makeatletter
-\\renewcommand*\\cleardoublepage{\\clearpage\\if@twoside
-  \\ifodd\\c@page \\hbox{}\\newpage\\if@twocolumn\\hbox{}%
-  \\newpage\\fi\\fi\\fi}
-\\makeatother
-
 \\author{Victor Nicollet}
 
 \\usepackage{setspace}
@@ -130,6 +124,15 @@ let finalhead = "\\documentclass[10pt,openleft,twoside]{book}
 \\sloppy
 
 \\pagestyle{plain}
+
+\\thispagestyle{empty}
+\\verb+ + 
+\\clearpage
+
+\\thispagestyle{empty}
+\\verb+ + 
+\\clearpage
+
 \\thispagestyle{empty}
 
 \\begin{flushright}
@@ -151,15 +154,15 @@ let finalhead = "\\documentclass[10pt,openleft,twoside]{book}
 \\clearpage
 
 \\thispagestyle{empty}
-\\verb+ +
+
+\\includegraphics[width=3.8in]{map-left.eps}
 
 \\clearpage
 
 \\thispagestyle{empty}
 
-\\includegraphics[width=3.8in]{map-big.eps}
+\\includegraphics[width=3.8in]{map-right.eps}
 
-\\clearpage
 "
 
 let fin = "

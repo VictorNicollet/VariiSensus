@@ -31,11 +31,14 @@ www/cover.eps: cover.png
 www/map.eps: map-athanor.png
 	convert map-athanor.png -resize 600x800\> -size 600x800 'xc:white' +swap -gravity center -composite www/map.eps
 
-www/map-big.eps: map-athanor.png
-	convert map-athanor.png -resize 1200x1600\> -size 1200x1600 'xc:white' +swap -gravity center -composite www/map-big.eps
+www/map-left.eps: map-athanor-left.png
+	convert map-athanor-left.png -resize 1200x1600\> -size 1200x1600 'xc:white' +swap -gravity center -composite www/map-left.eps
 
 
-latex : www/cover.eps www/map.eps www/map-big.eps
+www/map-right.eps: map-athanor-right.png
+	convert map-athanor-right.png -resize 1200x1600\> -size 1200x1600 'xc:white' +swap -gravity center -composite www/map-right.eps
+
+latex : www/cover.eps www/map-right.eps www/map-left.eps
 	$(BUILD) make.byte
 	./make.byte --latex
 	rm -f www/*.log www/*.aux www/*.dvi www/*.pdf || echo 'Clean!'
