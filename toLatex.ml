@@ -101,7 +101,7 @@ let finalhead = "\\documentclass[10pt,openleft,twoside]{book}
 \\usepackage{color}
 \\definecolor{gray}{rgb}{0.5,0.5,0.5}
 \\titleformat{\\chapter}[hang]{\\LARGE\\bfseries}{\\textcolor{gray}{\\thechapter\\ · }}{0pt}{\\LARGE\\bfseries\\sc}
-\\titlespacing{\\chapter}{0pt}{-30pt}{10pt}
+\\titlespacing{\\chapter}{0pt}{-30pt}{40pt}
 
 \\usepackage[frenchb]{babel}
 
@@ -155,14 +155,17 @@ let finalhead = "\\documentclass[10pt,openleft,twoside]{book}
 
 \\thispagestyle{empty}
 
-\\includegraphics[width=3.8in]{map-left.eps}
+\\begin{center}
+\\includegraphics[width=3.9in]{map-left.eps}
+\\end{center}
 
 \\clearpage
 
 \\thispagestyle{empty}
 
-\\includegraphics[width=3.8in]{map-right.eps}
-
+\\begin{center}
+\\includegraphics[width=3.9in]{map-right.eps}
+\\end{center}
 "
 
 let fin = "
