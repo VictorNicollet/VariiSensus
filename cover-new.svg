@@ -300,7 +300,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -576,5 +576,16 @@
        width="400"
        style="filter:url(#filter4674)"
        transform="matrix(1.052464,0,0,1.052464,-30.442996,43.768812)" />
+    <rect
+       style="fill:none;stroke:none"
+       id="rect3218"
+       width="450"
+       height="718.59106"
+       x="551.25"
+       y="12.65896"
+       transform="translate(0,309.85973)"
+       inkscape:export-filename="C:\Users\admin\Documents\GitHub\VariiSensus\cover-front.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
   </g>
 </svg>
