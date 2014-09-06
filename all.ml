@@ -1,63 +1,52 @@
-let all = 
+let book_1 = 
   (* Book 1 *)
-  [ "1",  "Giselle Guirevennec" ;
-    "2",  "Fanatiques" ;
-    "3",  "Erenheim" ;
-(**)
-    "4",  "Sans-Visage" ;
-    "5",  "Didalane" ;
-    "6",  "Cauchemars" ;
-    "7",  "Apocryphe" ;
-    "8",  "Le Soiffard" ;
-    "9",  "Apocalypse" ;
-    "10", "Théologie" ;
-    "11", "Serrig" ;
-    "12", "Nomination" ;
-    "13", "Arkadir" ; 
-    "14", "Haute Trahison" ;
-    "15", "Ordo Eborius" ;
-    "16", "Suidaster" ;
-    "17", "Mémoire" ;
-    "18", "Hans Banach" ;
-    "19", "Simmera Jottun" ;
-    "20", "Geerart" ;
-    "21", "Saint Benjamin" ; 
-    "22", "Votre Monde" ;
-    "23", "Invasion" ;
-    "24", "Archange" ;
-    "25", "Josephus" ;
-    "26", "Parchaki" ;
-    "27", "Récompense" ;
-    "28", "Généalogie" ;
-    "29", "Prédécesseur" ;
-    "30", "Informateur" ;
-    "31", "Croisière" ;
-    "32", "Patriarche" ;
-    "33", "Poison" ;
-    "34", "Nature Divine" ;
-    "35", "Lucrèce Neerus" ;
-    "36", "Saint Sébastien" ; 
-    "37", "Jeanne Nigelle" ;
-    "38", "Adinns et Adirs" ;
-    "39", "Les Abyssales" ;
-    "40", "L'Empire" ;
-    "41", "La Morgue" ;
-    "42", "Immortels" ;
-    "43", "Maison Mygaën" ;
-    "44", "Histoire" ;
-    "45", "Maison Altarane" ; 
-    "46", "Nagovie" ; 
-    "47", "Gwenadir" ;
-    "48", "Varii Sensus" ;
-(**)
-  (* Book 2 *)
+  [ "01-giselle",      "Giselle Guirevennec" ;
+    "02-fanatiques",   "Fanatiques" ;
+    "03-erenheim",     "Erenheim" ;
+    "04-sans-visage",  "Sans-Visage" ;
+    "05-didalane",     "Didalane" ;
+    "06-cauchemars",   "Cauchemars" ;
+    "07-apocryphe",    "Apocryphe" ;
+    "08-le-soiffard",  "Le Soiffard" ;
+    "09-apocalypse",   "Apocalypse" ;
+    "10-theologie",    "Théologie" ;
+    "11-serrig",       "Serrig" ;
+    "12-nomination",   "Nomination" ;
+    "13-arkadir",      "Arkadir" ; 
+    "14-trahison",     "Haute Trahison" ;
+    "15-ordo-eborius", "Ordo Eborius" ;
+    "16-suidaster",    "Suidaster" ;
+    "17-memoire",      "Mémoire" ;
+    "18-banach",       "Hans Banach" ;
+    "19-simmera",      "Simmera Jottun" ;
+    "20-geerart",      "Geerart" ;
+    "21-benjamin",     "Saint Benjamin" ; 
+    "22-votre-monde",  "Votre Monde" ;
+    "23-invasion",     "Invasion" ;
+    "24-archange",     "Archange" ;
+    "25-josephus",     "Josephus" ;
+    "26-parchaki",     "Parchaki" ;
+    "27-recompense",   "Récompense" ;
+    "28-genealogie",   "Généalogie" ;
+    "29-predecesseur", "Prédécesseur" ;
+    "30-informateur",  "Informateur" ;
+    "31-croisiere",    "Croisière" ;
+    "32-patriarche",   "Patriarche" ;
+    "33-poison",       "Poison" ;
+    "34-adinns",       "Nature Divine" ;
+    "35-lucrece",      "Lucrèce Neerus" ;
+    "36-sebastien",    "Saint Sébastien" ; 
+    "37-jeanne",       "Jeanne Nigelle" ;
+    "38-adirs",        "Adinns et Adirs" ;
+    "39-abyssales",    "Les Abyssales" ;
+    "40-empire",       "L'Empire" ;
+    "41-la-morgue",    "La Morgue" ;
+    "42-immortels",    "Immortels" ;
+    "43-mygaen",       "Maison Mygaën" ;
+    "44-histoire",     "Histoire" ;
+    "45-altarane",     "Maison Altarane" ; 
+    "46-nagovie",      "Nagovie" ; 
+    "47-gwenadir",     "Gwenadir" ;
+    "48-varii-sensus", "Varii Sensus" ;
   ]
 
-let rec sub s e = function 
-  | [] -> []
-  | x :: xs -> 
-    if s = 0 then 
-      if e = 0 then [] else x :: sub 0 (e - 1) xs
-    else sub (s - 1) e xs
-
-let book_1 = sub 0 48 all
