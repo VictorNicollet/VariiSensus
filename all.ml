@@ -47,7 +47,9 @@ let book_1 =
     "45-gwenadir",     "Gwenadir",
 	"46-histoire",     "Histoire" ;
     "47-altarane",     "Maison Altarane" ; 
-    "48-nagovie",      "Nagovie" ; 
-    "49-varii-sensus", "Varii Sensus" ;
+	"48-ambassadeur",  "Ambassadeur" ;
+    "49-nagovie",      "Nagovie" ; 
+    "50-varii-sensus", "Varii Sensus" ;
+    "51-liberte",      "Liberté" ;
   ]
 
