@@ -44,10 +44,10 @@ let book_1 =
     "42-la-morgue",    "La Morgue" ;
     "43-immortels",    "Immortels" ;
     "44-mygaen",       "Maison Mygaën" ;
-    "45-histoire",     "Histoire" ;
-    "46-altarane",     "Maison Altarane" ; 
-    "47-nagovie",      "Nagovie" ; 
-    "48-gwenadir",     "Gwenadir" ;
+    "45-gwenadir",     "Gwenadir",
+	"46-histoire",     "Histoire" ;
+    "47-altarane",     "Maison Altarane" ; 
+    "48-nagovie",      "Nagovie" ; 
     "49-varii-sensus", "Varii Sensus" ;
   ]
 
