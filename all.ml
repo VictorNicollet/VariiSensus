@@ -1,5 +1,4 @@
-let book_1 = 
-  (* Book 1 *)
+let all = 
   [ "01-giselle",      "Giselle Guirevennec" ;
     "02-fanatiques",   "Fanatiques" ;
     "03-erenheim",     "Erenheim" ;
@@ -44,10 +43,10 @@ let book_1 =
     "42-la-morgue",    "La Morgue" ;
     "43-immortels",    "Immortels" ;
     "44-mygaen",       "Maison Mygaën" ;
-    "45-gwenadir",     "Gwenadir",
-	"46-histoire",     "Histoire" ;
+    "45-gwenadir",     "Gwenadir";
+    "46-histoire",     "Histoire" ;
     "47-altarane",     "Maison Altarane" ; 
-	"48-ambassadeur",  "Ambassadeur" ;
+    "48-ambassadeur",  "Ambassadeur" ;
     "49-nagovie",      "Nagovie" ; 
     "50-varii-sensus", "Varii Sensus" ;
     "51-liberte",      "Liberté" ;

@@ -1,4 +1,6 @@
-let head = "\\documentclass[10pt,twocolumn]{article}
+type t = Draft | Final | Pdf
+
+let head_draft = "\\documentclass[10pt,twocolumn]{article}
 
 \\usepackage[utf8]{inputenc}
 \\usepackage[frenchb]{babel}
@@ -22,8 +24,7 @@ let head = "\\documentclass[10pt,twocolumn]{article}
 \\includegraphics{map.eps}
 "
 
-(* Old final head 
-let finalhead = "\\documentclass[10pt,openany]{book}
+let head_pdf = "\\documentclass[10pt,openany]{book}
 
 \\usepackage[papersize={5in,8in},margin=0.75in]{geometry}
 
@@ -32,9 +33,6 @@ let finalhead = "\\documentclass[10pt,openany]{book}
 
 \\usepackage{lmodern}
 \\usepackage[T1]{fontenc}
-
-\\title{Un monde qui meurt}
-\\author{Victor Nicollet}
 
 \\usepackage{setspace}
 \\doublespace
@@ -66,10 +64,6 @@ let finalhead = "\\documentclass[10pt,openany]{book}
 
   \\vfill
 
-  {\\small à Alix, pour ta patience}
-
-  \\vfill
-
 \\end{flushright}
 
 \\clearpage
@@ -80,10 +74,8 @@ let finalhead = "\\documentclass[10pt,openany]{book}
 \\clearpage
 \\changepage{0in}{-1in}{0.5in}{0.5in}{0in}{0in}{0in}{0in}{0in}
 "
-*)
 
-
-let finalhead = "\\documentclass[10pt,openleft,twoside]{book}
+let head_final = "\\documentclass[10pt,openleft,twoside]{book}
 
 \\usepackage[papersize={5in,8in},margin={0.6in,0.75in}]{geometry}
 
@@ -145,7 +137,7 @@ let finalhead = "\\documentclass[10pt,openleft,twoside]{book}
 
   \\vfill
 
-  {\\small à Alix, pour ta patience}
+  {}
 
   \\vfill
 
@@ -168,6 +160,11 @@ let finalhead = "\\documentclass[10pt,openleft,twoside]{book}
 \\end{center}
 "
 
+let head = function
+  | Pdf   -> head_pdf
+  | Draft -> head_draft
+  | Final -> head_final
+
 let fin = "
 \\cleardoublepage
 \\thispagestyle{empty}
@@ -175,7 +172,7 @@ let fin = "
 \\singlespace
 \\vfill
 {\\small
-J'espère que vous avez pris beaucoup de plaisir à lire ce roman ! Pour vous tenir au courant de la sortie du Tome 2, rendez-vous sur :
+J'espère que vous avez pris beaucoup de plaisir à lire ce roman ! Pour vous tenir au courant de la sortie des volumes suivants, rendez-vous sur :
 
 \\verb+http://nicollet.net/le-culte-de-l-archange+}
 
@@ -189,19 +186,18 @@ Victor Nicollet
 
 {\\tiny
   \\textcircled{c} 2013 Victor Nicollet\\\\
-  Couverture \\textcircled{c} Lucian Stanculescu
 }
 
 \\end{center}
 \\end{document}\n"
 
-let final = true
+class toLatex what = object
 
-class toLatex = object
+  val final = (what <> Draft)
 
   val buffer = 
     let buffer = Buffer.create 1024 in
-    Buffer.add_string buffer (if final then finalhead else head) ;
+    Buffer.add_string buffer (head what) ;
     buffer 
 
   method start_chapter title =

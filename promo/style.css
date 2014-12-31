@@ -66,6 +66,7 @@ a.call-to-action {
 }
 
 a.call-to-action:hover {
+  text-decoration: none;
   background-color: #4A4;
   background: -webkit-linear-gradient(-80deg,#4C4,#3B3);
   background: -moz-linear-gradient(-80deg,#4C4,#3B3);
@@ -91,6 +92,7 @@ a.call-to-inaction {
 }
 
 a.call-to-inaction:hover {
+  text-decoration: none;
   background-color: #999;
   background: -webkit-linear-gradient(-80deg,#AAA,#999);
   background: -moz-linear-gradient(-80deg,#AAA,#999);
@@ -112,4 +114,12 @@ hr {
 .comments {
   padding-left: 332px;
   margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }

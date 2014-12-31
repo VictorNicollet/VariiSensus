@@ -66,13 +66,14 @@ content=\"urn:http//nicollet.net/book-1\"/>
     </navPoint>"
 
 let ncx_item (path,title) = 
+  let n = int_of_string (String.sub path 0 2) in
   Printf.sprintf "<navPoint id=\"chapter-%s\" playOrder=\"%d\">
       <navLabel>
-        <text>%s. %s</text>
+        <text>%d. %s</text>
       </navLabel>
       <content src=\"%s.htm\"/>
     </navPoint>"
-    path (2 + int_of_string path) path title path
+    path (2 + n) n title path
 
 let ncx_foot = "  
     <navPoint id=\"credits\" playOrder=\"50\">
